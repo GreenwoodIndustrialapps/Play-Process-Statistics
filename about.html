@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Play Process Statistics | Play Process Statistics</title>
+<link rel="icon" href="icon.png">
+<style>
+:root{--ink:#0a345c;--panel:#0c365c;--rim:#8cc8f0;--blue-top:#4f9fd6;--blue-deep:#1d5e96;--blue-ledge:#0b2f55;
+--green-top:#27d36f;--green-deep:#0b8d45;--green-ledge:#06592b;--orange:#ffb938;--orange-deep:#c7770a;--orange-ledge:#7a4503;
+--purple-top:#7d4dc7;--purple-deep:#452180;--purple-ledge:#24104a;--gold:#f0c878;--red:#ff5a66}
+*{box-sizing:border-box}
+html{background:#041a33}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:#fff;line-height:1.55;font-size:17px;
+background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27180%27%20height%3D%27103.92%27%20viewBox%3D%270%200%20180%20103.92%27%3E%3Cpath%20d%3D%27M60.0%2C0.0%20L30.0%2C52.0%20L-30.0%2C52.0%20L-60.0%2C0.0%20L-30.0%2C-52.0%20L30.0%2C-52.0Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.05%29%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.14%29%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M240.0%2C0.0%20L210.0%2C52.0%20L150.0%2C52.0%20L120.0%2C0.0%20L150.0%2C-52.0%20L210.0%2C-52.0Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.05%29%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.14%29%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M60.0%2C103.9%20L30.0%2C155.9%20L-30.0%2C155.9%20L-60.0%2C103.9%20L-30.0%2C52.0%20L30.0%2C52.0Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.05%29%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.14%29%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M240.0%2C103.9%20L210.0%2C155.9%20L150.0%2C155.9%20L120.0%2C103.9%20L150.0%2C52.0%20L210.0%2C52.0Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.05%29%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.14%29%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M150.0%2C52.0%20L120.0%2C103.9%20L60.0%2C103.9%20L30.0%2C52.0%20L60.0%2C0.0%20L120.0%2C0.0Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.05%29%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.14%29%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M150.0%2C-52.0%20L120.0%2C0.0%20L60.0%2C0.0%20L30.0%2C-52.0%20L60.0%2C-103.9%20L120.0%2C-103.9Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.05%29%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.14%29%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M150.0%2C155.9%20L120.0%2C207.8%20L60.0%2C207.8%20L30.0%2C155.9%20L60.0%2C103.9%20L120.0%2C103.9Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.05%29%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.14%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"),radial-gradient(ellipse at 50% 30%,#2f86bd 0%,#16598f 38%,#082a4d 80%,#041a33 100%);background-attachment:fixed,fixed;min-height:100vh}
+.wrap{max-width:760px;margin:0 auto;padding:22px 16px 40px}
+.bar{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:18px;background:linear-gradient(#4f9fd6,#1d5e96);
+border:1.5px solid rgba(255,255,255,.4);box-shadow:0 5px 0 #0b2f55;margin-bottom:22px}
+.bar img{width:56px;height:56px;border-radius:13px;box-shadow:0 2px 0 rgba(0,0,0,.25);flex:none}
+.bar h1{margin:0;font-size:1.45rem;line-height:1.15;font-weight:800;text-shadow:0 3px 0 rgba(0,30,60,.5)}
+.bar p{margin:2px 0 0;font-size:.95rem;color:#e6f3fc;font-weight:600}
+nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.pill{display:inline-block;text-decoration:none;color:#fff;font-weight:800;font-size:1rem;padding:8px 18px;border-radius:999px;
+border:1.5px solid rgba(255,255,255,.55);box-shadow:0 4px 0 var(--l);background:linear-gradient(var(--t),var(--b));
+text-shadow:0 1px 0 rgba(0,0,0,.25)}
+.pill:hover{filter:brightness(1.1)}
+.pill.cur{box-shadow:0 4px 0 var(--l),0 0 14px rgba(255,255,255,.7)}
+.c-blue{--t:#4f9fd6;--b:#1d5e96;--l:#0b2f55}.c-green{--t:#27d36f;--b:#0b8d45;--l:#06592b}
+.c-orange{--t:#ffb938;--b:#c7770a;--l:#7a4503}.c-purple{--t:#7d4dc7;--b:#452180;--l:#24104a}
+.panel{background:var(--panel);border:2px solid rgba(140,200,240,.75);border-radius:20px;padding:20px 20px 18px;margin-bottom:20px;
+box-shadow:0 0 0 1px rgba(4,26,51,.6),0 0 22px rgba(80,160,230,.35),inset 0 0 26px rgba(80,160,230,.12)}
+.panel h2{margin:0 0 8px;font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}
+.panel h2:before{content:'';flex:none;width:18px;height:16px;background:linear-gradient(#5ff09a,#0b8d45);
+clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.panel.o h2:before{background:linear-gradient(#ffb938,#c7770a)}.panel.p h2:before{background:linear-gradient(#a98be0,#7d4dc7)}.panel.b h2:before{background:linear-gradient(#8cc8f0,#4f9fd6)}
+.panel p{margin:0 0 10px;color:#e8f3fb}.panel p:last-child{margin-bottom:0}
+.upd{color:#bcd9ee!important;font-size:.9rem}
+.panel ul{margin:0 0 10px;padding-left:22px;color:#e8f3fb}
+a{color:#ffd77a;font-weight:700}
+.q{font-weight:800;color:#fff;margin:14px 0 2px}.q:first-of-type{margin-top:4px}
+.big{font-size:1.05rem}
+.hero{text-align:center;padding:6px 6px 2px}
+.hero .go{margin-top:10px}
+footer{margin-top:26px;text-align:center;color:#bcd9ee;font-size:.92rem}
+footer a{color:#bcd9ee;font-weight:600}
+a.button{display:inline-block;margin-top:10px;padding:12px 24px;border-radius:14px;color:#fff;text-decoration:none;font-weight:800;border:1.5px solid rgba(255,255,255,.55);background:linear-gradient(#27d36f,#0b8d45);box-shadow:0 4px 0 #06592b;text-shadow:0 1px 0 rgba(0,0,0,.25)}
+footer nav{justify-content:center;margin-bottom:12px}
+@media(max-width:480px){body{font-size:16px}.bar h1{font-size:1.25rem}nav{gap:7px}.pill{padding:7px 11px;font-size:.93rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="bar"><img src="icon.png" alt="Play Process Statistics icon"><div><h1>About Play Process Statistics</h1><p>35 years of quality, turned into a game you can feel.</p></div></div>
+<nav><a class='pill c-blue' href='index.html'>Support</a><a class='pill c-green' href='privacy.html'>Privacy</a><a class='pill c-orange' href='disclaimer.html'>Disclaimer</a><a class='pill c-purple cur' href='about.html'>About</a></nav>
+
+<div class="panel p"><h2>A career in quality</h2><p>I've spent 35 years in quality, Six Sigma, and Lean within automotive manufacturing, and one lesson keeps coming back: you can read a Cpk or an OEE figure without ever feeling what moves it. A chart can tell you a process is capable, but it rarely shows what a rushed pace, an uneven rhythm or one stoppage does to the numbers.</p></div>
+<div class="panel p"><h2>The gap</h2><p>These ideas are usually taught with formulas and tables. Working through them on paper explains the sums but not the feel, and it was never something you could pick up for a minute and come back to. I wanted people to play a short run and then see the same ideas in their own results.</p></div>
+<div class="panel p"><h2>Why Play Process Statistics</h2><p>So I built it, as a companion to <a href="https://greenwoodindustrialapps.github.io/Process-Capability/about.html">Process Capability Calculator App</a>, <a href="https://greenwoodindustrialapps.github.io/Scatter-Plot/about.html">Scatter Plot</a> and <a href="https://greenwoodindustrialapps.github.io/Rolled-Throughput-Yield/about.html">Rolled Throughput Yield</a>. A run is 30 cycles of tapping: hit the green part, avoid the red one, and keep a steady pace. Go too fast or too slow and your average drifts. Be uneven and your spread grows. Make a mistake and you get a bad part or a stop.</p><p>Your results then show your Cpk and OEE, a histogram and control chart of your own times, and a history of your runs. A coach question after each run asks you something about what just happened, and the Stat Guide explains the ideas in plain language.</p><p>Everything runs entirely on your own device. Nothing from your play ever leaves your phone.</p></div>
+<div class="panel"><h2>Get in touch</h2><p>Questions, feedback, or just want to talk shop about process statistics and how to feel them? I'd like to hear from you.</p><a class="button" href="mailto:industrialapps@yahoo.com">Email Me</a></div>
+
+<footer>&copy; 2026 Play Process Statistics. All rights reserved. &middot; <a href="index.html">Support</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="disclaimer.html">Disclaimer</a> &middot; <a href="about.html">About</a></footer>
+</div>
+</body>
+</html>
